@@ -5,8 +5,7 @@ import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-import com.github.chen.gankapp.MainActivity;
-import com.github.chen.gankapp.R;
+import com.github.chen.gankapp.activity.main.MainActivity;
 
 public class LauncherActivity extends AppCompatActivity implements LauncherContract.View {
 

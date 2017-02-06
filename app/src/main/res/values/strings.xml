@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">GankApp</string>
+    <string name="home_search">搜索干货</string>
 </resources>
