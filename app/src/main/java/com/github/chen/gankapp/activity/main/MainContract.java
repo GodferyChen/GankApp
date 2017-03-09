@@ -14,6 +14,21 @@ public interface MainContract {
 
     interface View extends BaseView{
 
+        void showBannerFail(String failMessage,boolean isRandom);
+
+        void setBanner(String imgUrl);
+
+        void startBannerLoadingAnim();
+
+        void stopBannerLoadingAnim();
+
+        void enableFabButton();
+
+        void disEnableFabButton();
+
+        void setAppBarLayoutColor(int appBarLayoutColor);
+
+        void setFabButtonColor(int color);
     }
 
     interface Presenter extends BasePresenter{
