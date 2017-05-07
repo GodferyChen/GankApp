@@ -2,6 +2,8 @@ package com.github.chen.gankapp.activity.launcher;
 
 import android.support.annotation.NonNull;
 
+import com.google.common.base.Preconditions;
+
 import java.util.concurrent.TimeUnit;
 
 import rx.Observable;
@@ -22,7 +24,8 @@ public class LauncherPresenter implements LauncherContract.Presenter{
     private CompositeSubscription mSubscription;
 
     public LauncherPresenter(LauncherContract.View launcherView){
-        mLauncherView = launcherView;
+        mLauncherView = Preconditions.checkNotNull(launcherView,"mLauncherView cannot be null!");
+        mLauncherView.setPresenter(this);
         mSubscription = new CompositeSubscription();
     }
 
@@ -36,7 +39,7 @@ public class LauncherPresenter implements LauncherContract.Presenter{
         mSubscription.clear();
     }
 
-    public void start(){
+    private void start(){
         Observable.just(null)//将传入的参数依次发送出来
                 .subscribeOn(Schedulers.io())// 指定 subscribe() 发生在 IO 线程
                 .observeOn(AndroidSchedulers.mainThread()) // 指定 Subscriber 的回调发生在主线程

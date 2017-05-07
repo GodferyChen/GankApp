@@ -9,12 +9,11 @@ import android.text.TextUtils;
 import android.util.SparseArray;
 import android.webkit.CookieManager;
 
-import com.github.chen.library.LogHelper;
-import com.github.chen.manager.BuildConfig;
-import com.github.chen.manager.R;
-import com.github.chen.manager.retrofit.cookie.CookiesManager;
-import com.github.chen.manager.retrofit.entry.User;
-import com.github.chen.manager.ui.login.LoginActivity;
+import com.github.chen.gankapp.BuildConfig;
+import com.github.chen.gankapp.R;
+import com.github.chen.gankapp.retrofit.cookie.CookiesManager;
+import com.github.chen.gankapp.retrofit.entry.User;
+import com.github.chen.library.helper.LogHelper;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
@@ -244,7 +243,7 @@ public class RetrofitHelper {
                 user.versionCode = packageInfo.versionCode;
                 user.save();
 //                BroadcastHelper.send(Config.ACTION_USER_LOGOUT);
-                LoginActivity.start(context);
+//                LoginActivity.start(context);
             }
         } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();

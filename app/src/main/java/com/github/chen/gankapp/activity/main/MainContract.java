@@ -1,7 +1,7 @@
 package com.github.chen.gankapp.activity.main;
 
 import android.graphics.drawable.Drawable;
-import android.support.annotation.Nullable;
+import android.support.v7.graphics.Palette;
 
 import com.github.chen.library.base.BasePresenter;
 import com.github.chen.library.base.BaseView;
@@ -35,7 +35,7 @@ public interface MainContract {
 
         void getRandomBanner();
 
-//        void setThemeColor(Palette palette);
+        void setThemeColor(Palette palette);
 
         void getBanner(final boolean isRandom);
 

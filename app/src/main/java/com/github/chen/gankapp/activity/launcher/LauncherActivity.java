@@ -2,19 +2,26 @@ package com.github.chen.gankapp.activity.launcher;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 
 import com.github.chen.gankapp.activity.main.MainActivity;
+import com.github.chen.gankapp.base.BaseActivity;
 
-public class LauncherActivity extends AppCompatActivity implements LauncherContract.View {
+import timber.log.Timber;
 
-    private LauncherContract.Presenter mLauncherPresenter = new LauncherPresenter(this);
+import static com.google.common.base.Preconditions.checkNotNull;
+
+public class LauncherActivity extends BaseActivity implements LauncherContract.View {
+
+    private LauncherContract.Presenter mLauncherPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);//竖屏显示
+
+        new LauncherPresenter(this);
     }
 
     @Override
@@ -39,5 +46,11 @@ public class LauncherActivity extends AppCompatActivity implements LauncherContr
     public void onBackPressed() {
         super.onBackPressed();
         //处理按下返回键的操作
+    }
+
+
+    @Override
+    public void setPresenter(@NonNull LauncherContract.Presenter presenter) {
+        mLauncherPresenter = checkNotNull(presenter);
     }
 }

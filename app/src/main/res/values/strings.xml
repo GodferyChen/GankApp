@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">GankApp</string>
     <string name="home_search">搜索干货</string>
+    <string name="http_unknown">未知</string>
+    <string name="http_not_network">没有网络</string>
 </resources>

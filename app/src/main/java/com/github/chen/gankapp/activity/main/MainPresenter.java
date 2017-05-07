@@ -2,6 +2,7 @@ package com.github.chen.gankapp.activity.main;
 
 import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
+import android.support.v7.graphics.Palette;
 
 import rx.subscriptions.CompositeSubscription;
 
@@ -23,7 +24,7 @@ public class MainPresenter implements MainContract.Presenter{
 
     @Override
     public void subscribe() {
-
+        getBanner(false);
     }
 
     @Override
@@ -33,6 +34,11 @@ public class MainPresenter implements MainContract.Presenter{
 
     @Override
     public void getRandomBanner() {
+
+    }
+
+    @Override
+    public void setThemeColor(Palette palette) {
 
     }
 

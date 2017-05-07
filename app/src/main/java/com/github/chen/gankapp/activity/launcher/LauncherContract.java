@@ -9,7 +9,7 @@ import com.github.chen.library.base.BaseView;
 
 public interface LauncherContract {
 
-    interface View extends BaseView{
+    interface View extends BaseView<Presenter>{
         void toHome();
     }
 

@@ -1,6 +1,7 @@
 package com.github.chen.gankapp.retrofit.service;
 
-import com.github.chen.manager.retrofit.entry.User;
+
+import com.github.chen.gankapp.retrofit.entry.User;
 
 import java.util.Map;
 

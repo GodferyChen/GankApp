@@ -20,6 +20,8 @@ import android.view.WindowManager;
 
 import com.github.chen.gankapp.R;
 
+import timber.log.Timber;
+
 /**
  * Created by chen on 2016/9/24.
  */
@@ -43,6 +45,7 @@ public class BaseActivity extends AppCompatActivity {
         isDestroy = false;
         mActivity = this;
         mAppContext = (AppContext) getApplicationContext();
+        Timber.tag(TAG);
     }
 
     @Override
