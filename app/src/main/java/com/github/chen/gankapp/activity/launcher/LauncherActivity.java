@@ -1,14 +1,11 @@
 package com.github.chen.gankapp.activity.launcher;
 
 import android.content.Intent;
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 
 import com.github.chen.gankapp.activity.main.MainActivity;
 import com.github.chen.gankapp.base.BaseActivity;
-
-import timber.log.Timber;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
@@ -19,7 +16,6 @@ public class LauncherActivity extends BaseActivity implements LauncherContract.V
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);//竖屏显示
 
         new LauncherPresenter(this);
     }

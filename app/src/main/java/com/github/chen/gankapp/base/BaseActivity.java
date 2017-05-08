@@ -41,7 +41,7 @@ public class BaseActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         //长按出现复制粘贴栏在顶部占位问题解决方法
         supportRequestWindowFeature(WindowCompat.FEATURE_ACTION_MODE_OVERLAY);
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);//竖屏显示
         isDestroy = false;
         mActivity = this;
         mAppContext = (AppContext) getApplicationContext();

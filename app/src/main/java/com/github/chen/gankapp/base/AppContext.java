@@ -4,8 +4,10 @@ import android.app.Application;
 import android.util.Log;
 
 import com.github.chen.gankapp.BuildConfig;
+import com.github.chen.gankapp.R;
 import com.github.chen.gankapp.retrofit.RetrofitHelper;
 import com.github.chen.gankapp.util.FakeCrashLibrary;
+import com.github.chen.gankapp.util.ThemeManager;
 
 import timber.log.Timber;
 
@@ -14,6 +16,12 @@ import timber.log.Timber;
  */
 
 public class AppContext extends Application {
+
+    private static AppContext INSTANCE;
+
+    public static AppContext getInstance(){
+        return INSTANCE;
+    }
 
     @Override
     public void onCreate() {
@@ -26,6 +34,9 @@ public class AppContext extends Application {
         } else {
             Timber.plant(new CrashReportingTree());
         }
+        INSTANCE = this;
+        //init theme color
+        ThemeManager.INSTANCE.initColorPrimary(R.color.colorPrimary);
     }
 
     /** A tree which logs important information for crash reporting. */

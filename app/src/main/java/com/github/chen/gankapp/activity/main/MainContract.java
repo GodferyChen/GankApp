@@ -12,7 +12,7 @@ import com.github.chen.library.base.BaseView;
 
 public interface MainContract {
 
-    interface View extends BaseView{
+    interface View extends BaseView<Presenter>{
 
         void showBannerFail(String failMessage,boolean isRandom);
 

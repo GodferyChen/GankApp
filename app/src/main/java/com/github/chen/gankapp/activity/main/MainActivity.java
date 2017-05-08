@@ -1,18 +1,23 @@
 package com.github.chen.gankapp.activity.main;
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 
 import com.github.chen.gankapp.R;
 import com.github.chen.gankapp.base.BaseActivity;
+import com.google.common.base.Preconditions;
 
 public class MainActivity extends BaseActivity implements MainContract.View {
 
-    private MainContract.Presenter mMainPresenter = new MainPresenter(this);
+    private MainContract.Presenter mMainPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+        new MainPresenter(this);
     }
 
     @Override
@@ -56,7 +61,7 @@ public class MainActivity extends BaseActivity implements MainContract.View {
     }
 
     @Override
-    public void setPresenter(Object presenter) {
-
+    public void setPresenter(MainContract.Presenter presenter) {
+        mMainPresenter = Preconditions.checkNotNull(presenter);
     }
 }
