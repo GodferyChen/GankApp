@@ -9,5 +9,14 @@
     <color name="colorTabTextSelected">#FDFDFD</color>
     <color name="colorTabIndicator">#FDFDFD</color>
 
+    <color name="textPrimary">#212121</color>
+    <color name="textSecondary">#727272</color>
+
+    <color name="divider">#eeeeee</color>
+    <color name="disabled">#E8E8E8</color>
+    <color name="background">#eeeeee</color>
+    <color name="ripple_light">#1f000000</color>
+    <color name="white">#ffffffff</color>
+    <color name="black">#00000000</color>
 
 </resources>

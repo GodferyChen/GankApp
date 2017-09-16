@@ -14,11 +14,16 @@ android {
         // Enabling multidex support.
         multiDexEnabled true
 
-//        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         jackOptions {
             additionalParameters("jack.incremental": "true")
             enabled true
+        }
+
+        ndk {
+            moduleName "apkpatch"
+            abiFilters "armeabi", "armeabi-v7a", "x86"
         }
     }
 
@@ -38,13 +43,17 @@ android {
         }
 
         release {
-            minifyEnabled true
+            minifyEnabled false
             useProguard true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             testProguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguardTest-rules.pro'
         }
     }
 
+    sourceSets.main {
+        jniLibs.srcDir 'src/main/libs'
+        jni.srcDirs = [] //disable automatic ndk-build call
+    }
 }
 
 dependencies {
@@ -73,4 +82,5 @@ dependencies {
 
     // Dependencies for local unit tests
     testCompile "junit:junit:$rootProject.ext.junitVersion"
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
 }
