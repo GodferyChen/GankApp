@@ -12,9 +12,9 @@ import com.github.chen.library.base.BaseView;
 
 public interface MainContract {
 
-    interface View extends BaseView<Presenter>{
+    interface View extends BaseView<Presenter> {
 
-        void showBannerFail(String failMessage,boolean isRandom);
+        void showBannerFail(String failMessage, boolean isRandom);
 
         void setBanner(String imgUrl);
 
@@ -31,7 +31,7 @@ public interface MainContract {
         void setFabButtonColor(int color);
     }
 
-    interface Presenter extends BasePresenter{
+    interface Presenter extends BasePresenter {
 
         void getRandomBanner();
 

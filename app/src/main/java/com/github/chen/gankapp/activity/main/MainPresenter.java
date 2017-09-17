@@ -47,7 +47,8 @@ public class MainPresenter implements MainContract.Presenter {
     @Override
     public void setThemeColor(Palette palette) {
         if (palette != null) {
-            int colorPrimary = AppContext.getInstance().getResources().getColor(R.color.colorPrimary);
+            int colorPrimary = AppContext.getInstance().getResources().getColor(R.color
+                    .colorPrimary);
             //把从调色板上获取的主题色保存到内存中
             ThemeManager.INSTANCE.setColorPrimary(palette.getDarkVibrantColor(colorPrimary));
             //设置 AppBarLayout 的背景色
