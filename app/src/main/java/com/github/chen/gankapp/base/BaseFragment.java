@@ -26,7 +26,6 @@ public class BaseFragment extends Fragment implements View.OnTouchListener {
     protected boolean isAttachedToWindow, isDestroy, isOperate;
     protected AppContext mAppContext;
 
-
     protected void setPressAnime(View... views) {
         for (View view : views) {
             view.setOnTouchListener(this);
