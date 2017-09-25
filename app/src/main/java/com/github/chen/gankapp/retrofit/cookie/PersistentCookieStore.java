@@ -27,7 +27,6 @@ public class PersistentCookieStore {
 	private final Map<String, ConcurrentHashMap<String, Cookie>> cookies;
 	private final SharedPreferences cookiePrefs;
 
-
 	public PersistentCookieStore(Context context) {
 		cookiePrefs = context.getSharedPreferences(COOKIE_PREFS, 0);
 		cookies = new HashMap<>();
