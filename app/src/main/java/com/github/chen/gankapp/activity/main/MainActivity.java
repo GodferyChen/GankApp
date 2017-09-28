@@ -16,9 +16,11 @@ public class MainActivity extends BaseActivity implements MainContract.View {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //设置竖屏
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         new MainPresenter(this);
+        // TODO: 2017/9/28 目前还没想清楚要做什么功能 先立flag
     }
 
     @Override
